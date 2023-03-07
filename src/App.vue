@@ -1,29 +1,29 @@
 <template>
   <base-container title="Vuex">
   <base-counter></base-counter>
-  <base-counter2></base-counter2>
+  <base2-counter></base2-counter>
   <base-button></base-button>
-  <button @click="add">Add 2</button>
-</base-container>
+  <button @click="Add">Add 2</button>
+  </base-container>
 </template>
 
 <script>
 import BaseContainer from './components/BaseContainer.vue';
-import BaseButton from './components/BaseButton.vue';
 import BaseCounter from './components/BaseCounter.vue';
-import BaseCounter2 from './components/BaseCounter2.vue';
+import BaseButton from './components/BaseButton.vue';
+import Base2Counter from './components/Base2Counter.vue';
 
 export default {
   components: {
     BaseContainer,
-    BaseButton,
     BaseCounter,
-    BaseCounter2
+    BaseButton,
+    Base2Counter
   },
   methods:{
-    add(){
-      this.$store.commit('increment'); 
-    }
+    Add(){
+    this.$store.dispatch('increment')
+  }
   }
 };
 </script>

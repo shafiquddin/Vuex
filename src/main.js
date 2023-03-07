@@ -1,24 +1,35 @@
 import { createApp } from 'vue';
 import { createStore } from 'vuex';
+
 import App from './App.vue';
 
 const store=createStore({
     state(){
         return {
-            counter:0,
+            counter:0
         }
     },
     mutations:{
-        increment(state){ 
+        increment(state){
             state.counter=state.counter+2;
         },
         increase(state,payload){
-            state.counter=state.counter+payload.value
+            state.counter=state.counter+payload.value;
+        }
+    },
+    actions:{
+        increment(context){
+            setTimeout(()=>{
+                context.commit('increment')
+            },2000)
+        },
+        increase(context,payload){
+                context.commit('increase',payload)
         }
     },
     getters:{
         finalCounter(state){
-            return state.counter*3
+            return state.counter*3;
         },
         normalizeCounter(_,getters){
             const finalCounter=getters.finalCounter;
@@ -30,10 +41,10 @@ const store=createStore({
                 return finalCounter;
             }
         }
-    }
+    },
 })
 
 const app = createApp(App);
-app.use(store);
+app.use(store)
 
 app.mount('#app');
