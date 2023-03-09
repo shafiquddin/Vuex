@@ -1,12 +1,12 @@
 <template>
-    <h1>{{ counter }}</h1>
-    <p>we do more</p>
+    <h3>{{ counter }}</h3>
+    <p>We do more</p>
 </template>
 <script>
 export default {
     computed:{
         counter(){
-            return this.$store.getters.normalizeCounter;
+            return this.$store.getters.normalizeCounter
         }
     }
 }

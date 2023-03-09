@@ -1,15 +1,14 @@
 <template>
-<button @click="Add">Add 10</button>
+<button @click="Add">Add</button>  
 </template>
 <script>
+
 export default {
     methods:{
         Add(){
-            this.$store.dispatch({
-                type:'increase',
-                value:10
-            })
+            this.$store.dispatch('increment');
         }
+
     }
 }
 </script>

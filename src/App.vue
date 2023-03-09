@@ -1,9 +1,9 @@
 <template>
   <base-container title="Vuex">
-  <base-counter></base-counter>
-  <base2-counter></base2-counter>
-  <base-button></base-button>
-  <button @click="Add">Add 2</button>
+   <base-counter></base-counter>
+   <favrite-counter></favrite-counter>
+   <base-button></base-button>
+   <change-button></change-button>
   </base-container>
 </template>
 
@@ -11,19 +11,21 @@
 import BaseContainer from './components/BaseContainer.vue';
 import BaseCounter from './components/BaseCounter.vue';
 import BaseButton from './components/BaseButton.vue';
-import Base2Counter from './components/Base2Counter.vue';
+import FavriteCounter from './components/FavriteCounter.vue';
+import ChangeButton from './components/ChangeButton.vue';
 
 export default {
   components: {
     BaseContainer,
     BaseCounter,
+    FavriteCounter,
     BaseButton,
-    Base2Counter
+    ChangeButton
   },
   methods:{
     Add(){
-    this.$store.dispatch('increment')
-  }
+        this.$store.dispatch('increment')
+    }
   }
 };
 </script>
