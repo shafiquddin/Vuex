@@ -3,7 +3,8 @@ import { createStore } from "vuex";
 
 import App from "./App.vue";
 
-const counterStore ={
+const counterStore = {
+    namespaced:true,
   state() {
     return {
       counter: 0,
@@ -46,9 +47,9 @@ const counterStore ={
 };
 
 const store = createStore({
-  modules: {
-    number: counterStore,
-  },
+    modules:{
+        number:counterStore,
+    },
   state() {
     return {
       isLogged: false,

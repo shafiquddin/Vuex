@@ -6,7 +6,7 @@
 export default {
     methods:{
         Add(){
-            this.$store.dispatch('increment');
+            this.$store.dispatch('number/increment');
         }
 
     }
