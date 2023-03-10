@@ -8,7 +8,6 @@ export default {
         Add(){
             this.$store.dispatch('number/increment');
         }
-
     }
 }
 </script>
